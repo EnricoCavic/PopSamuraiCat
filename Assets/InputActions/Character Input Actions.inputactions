@@ -1,0 +1,172 @@
+{
+    "name": "Character Input Actions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "0cb6b256-7dd1-470f-ba03-e5e9deff67a6",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "ed26e83f-68ee-4112-8bc7-af17d2f38afe",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Value",
+                    "id": "ad7b0ae2-6a14-4574-b550-f61d62f27c83",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dash",
+                    "type": "Value",
+                    "id": "1244ec7e-152b-4080-ba72-1a290fe3f5e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "67a5bfff-13c1-4080-afda-74a827c0891b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TimeScale",
+                    "type": "Button",
+                    "id": "e049eaa7-2ec5-4fac-a1ae-fa6a5d4cfb3f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ChangeLane",
+                    "type": "Value",
+                    "id": "9a3ab131-136d-4e38-a9f6-d970c3036312",
+                    "expectedControlType": "Analog",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "AD",
+                    "id": "577df5b9-b8e5-4b25-9bb9-4cd86fbaf257",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "d6cdfe92-b32b-441b-b214-c60bc714c1c6",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "cf618f84-30ff-4123-b086-529f83907aac",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "598d1bfb-6bbc-4177-8e0d-e3d4d8ba6127",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae8ccbee-9a36-49c3-8cc0-0e01b92aacee",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17585d6b-e048-4fcd-b5e2-239abfe2fa29",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92b29fe9-30c0-448f-8329-069dfb0b3d0a",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f21c951-6d59-48ba-9509-77c9e571584d",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TimeScale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af6a02b7-a9ab-4033-9e27-2f38cf348a4b",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeLane",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddcffff2-906f-4270-adac-af4be6bd185d",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeLane",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

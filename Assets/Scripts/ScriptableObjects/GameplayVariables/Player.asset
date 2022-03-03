@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01def4bd70a135d4688d05d2c713f366, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  jumpForce: 21
+  movementSpeed: 90
+  defaultDrag: 9
+  coyoteTime: 0.2
+  dashForce: 34
+  dashChargeForceWeight: 1.27
+  dashTimeout: 0.15
+  dashChargeTimeoutWeight: 1.82
+  dashingDrag: 0
+  dashingGravityMultiplier: 0
+  dashCooldown: 1
+  chargingDashSpeedMultiplier: 0.2
+  chargingDashTimeout: 1.18
+  chargingDashGravityMultiplier: 0.6
+  chargingDashDrag: 10
+  airDrag: 6
+  airbourneGravityMultiplier: 12
+  jumpingGravityMultiplier: 1.2
