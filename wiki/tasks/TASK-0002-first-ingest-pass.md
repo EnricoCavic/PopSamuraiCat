@@ -1,7 +1,8 @@
 ---
 type: task
-status: in-progress
+status: shipped
 started: 2026-08-13
+shipped: 2026-08-13
 deliverables: [player-state-machine, player-movement, player-input, level-assembly, run-loop-and-scoring, game-events, reading-unity-scene-wiring]
 ---
 
@@ -38,24 +39,11 @@ One `skills/` page, from the [[SCHEMA]] Hard Rule 6 checkpoint:
 Also updated: [[index]] (seven new rows, rewritten *Biggest gaps*), [[log]], and the "empty" lines
 in the `systems/` and `tasks/` READMEs.
 
-## State
+Shipped in commit `fc4b271`, together with [[TASK-0001-deploy-brain-os]].
 
-**The pages are written and the registers updated; nothing is committed yet.**
-
-**No design page was written, deliberately.** Everything found this pass is a code fact. What the
-runner is *meant* to feel like, whether score should be distance rather than time, and whether
-difficulty is supposed to ramp are unrecorded anywhere in the repo, and inventing them would be
-[[SCHEMA]] Hard Rule 2's failure. `design/` stays empty until the human puts something in
-`wiki/raw/` or settles it in conversation.
-
-**Nothing was compiled or run.** The Unity Editor was not driven during this pass, so no claim here
-rests on observed behaviour — the pages say so where it matters. The defects listed in them were
-found by reading and **none has been reproduced in Play Mode**; that is the obvious next step and it
-needs a human at the Editor.
-
-**Open for the human**, carried in the pages rather than here: the four read-only defects in
-[[player-state-machine]] § *Defects found by reading*, and whether the seven unreferenced level-part
-assets in [[level-assembly]] are abandoned or staged for later.
+**No design page was written, deliberately** — everything found this pass is a code fact, and what
+the game is *for* is unrecorded anywhere in the repo. That gap, the four unreproduced defects, and
+the unread areas are carried in [[index]] § *Biggest gaps*, which is where a new session looks.
 
 ## Notes
 

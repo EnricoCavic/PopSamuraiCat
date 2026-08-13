@@ -1,7 +1,8 @@
 ---
 type: task
-status: in-progress
+status: shipped
 started: 2026-08-13
+shipped: 2026-08-13
 deliverables: [SCHEMA, index, log, configuring-a-subagent, parallel-coding-fan-out, mapping-what-you-built, handing-off-a-session, verifying-a-milestone-plan]
 ---
 
@@ -47,34 +48,11 @@ deployed file is LF-only, UTF-8, no BOM; and `sha256sum -c .claude/skills/brain-
 was run from the repository root and passed. **Nothing here proves the plugin loads** — see
 § *State*.
 
-## State
-
-**The deploy wrote files; it did not install anything.** Two things remain, and neither can be done
-from inside a session:
-
-1. **`git config core.hooksPath .githooks`** — installs the credential scan. **Per-clone and
-   per-developer**: it is not stored in the repository, so every clone needs it run once.
-2. **Restart Claude Code at the repository root, then check that `/brain-os:ingest` and
-   `brain-os:code-reader` are actually listed.** A project-scope plugin loads on the *next* session,
-   only after the workspace trust dialog is accepted, and only when Claude Code starts at the
-   repository root — it does not walk up from a subdirectory.
-
-**If they are not listed, it is the trust gate far more often than it is this repository**, and a
-closed gate shows no error at all — the commands are simply absent. `CLAUDE.md` § *If
-`/brain-os:ingest` and `brain-os:code-reader` are not listed* is written for exactly that moment.
-The two that cost the most time: the dialog **may never be presented** in some front-ends (the
-VSCode extension among them — launching the CLI once from the repository root presents it), and on
-Windows the `~/.claude.json` project key is **case-sensitive on the drive letter**, so `c:/Users/…`
-and `C:/Users/…` can exist side by side with only one of them trusted. Both need
-`hasTrustDialogAccepted: true`. That file is user-level configuration outside this repository and
-Claude Code rewrites it on exit, so it is edited by hand between sessions, not from one.
-
-**Then this task ships**: flip `status:` to `shipped`, add `shipped:`, and delete this section.
-
-**Unverified beyond that:** nothing in the wiki has been checked against a running Editor. The
-[[SCHEMA]] slots were written from `Packages/manifest.json`, `ProjectSettings/`, the shape of
-`Assets/`, the unity-bridge package docs, and a partial read of `Assets/Scripts/` — not from
-compiling the project or playing it.
+**Shipped in commit `fc4b271`**, together with [[TASK-0002-first-ingest-pass]]. The two conditions
+this task was held open for are both met and were checked, not assumed: `git config
+core.hooksPath` returns `.githooks` in this clone, and the plugin loads — `/brain-os:ingest` ran the
+session that shipped this. Both are per-clone, so a fresh clone still needs the `core.hooksPath`
+line from `CLAUDE.md`.
 
 ## Notes
 

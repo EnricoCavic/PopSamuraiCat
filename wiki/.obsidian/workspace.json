@@ -214,6 +214,8 @@
   },
   "active": "8a9d3a028c2a0225",
   "lastOpenFiles": [
+    "tasks/TASK-0001-deploy-brain-os.md.tmp.35316.d377bf6fec53",
+    "tasks/TASK-0002-first-ingest-pass.md.tmp.35316.88bdb34c4978",
     "tasks/TASK-0002-first-ingest-pass.md.tmp.35316.39c55e913fd1",
     "tasks/TASK-0002-first-ingest-pass.md.tmp.35316.e1bbc6f52d0e",
     "index.md.tmp.35316.e7172e6cd494",
@@ -225,8 +227,6 @@
     "systems/README.md.tmp.35316.40273581a947",
     "systems/game-events.md.tmp.35316.c17dab1008ce",
     "systems/game-events.md",
-    "systems/game-events.md.tmp.35316.eda4e0a9ebda",
-    "systems/run-loop-and-scoring.md.tmp.35316.4921f261acbd",
     "systems/run-loop-and-scoring.md",
     "systems/level-assembly.md",
     "systems/player-input.md",
