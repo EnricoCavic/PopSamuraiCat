@@ -1,2 +1,20 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# --- brain-os method (added at deploy) ---------------------------------------
+# These files are hashed in .claude/skills/brain-os/.manifest.sha256, and a hash
+# is over bytes. This repo relies on core.autocrlf, which is `true` by default on
+# Windows and would hand these back as CRLF on checkout — the manifest would then
+# report every vendored file as drift in a fresh clone. Pinning them to LF keeps
+# the check meaningful on every machine.
+#
+# .githooks/pre-commit needs LF regardless of the manifest: a CRLF shebang fails
+# outright on any POSIX shell.
+#
+# Scoped to the method's own paths — this changes nothing about how Unity's
+# assets, scripts or settings are stored. The wiki rule covers the whole markdown
+# tree rather than just the vendored SCHEMA.md and wiki/skills/ pages, so that
+# pages written later match the ones deployed here.
+.githooks/pre-commit          text eol=lf
+.claude/skills/brain-os/**    text eol=lf
+wiki/**/*.md                  text eol=lf

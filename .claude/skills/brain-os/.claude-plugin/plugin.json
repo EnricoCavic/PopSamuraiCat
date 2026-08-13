@@ -1,0 +1,5 @@
+{
+  "name": "brain-os",
+  "description": "A Karpathy-style LLM wiki as a working method: three operations over wiki/, seven pinned subagents, and a credential pre-commit scan. Vendored into this repository — edit it upstream, not here.",
+  "version": "0.1.0"
+}

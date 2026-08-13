@@ -1,0 +1,72 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:decisions/ ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "path:design/ ",
+      "color": {
+        "a": 1,
+        "rgb": 14993425
+      }
+    },
+    {
+      "query": "path:skills/ ",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "path:raw/ ",
+      "color": {
+        "a": 1,
+        "rgb": 8512720
+      }
+    },
+    {
+      "query": "path:systems/",
+      "color": {
+        "a": 1,
+        "rgb": 3364838
+      }
+    },
+    {
+      "query": "path:tasks/",
+      "color": {
+        "a": 1,
+        "rgb": 8336877
+      }
+    },
+    {
+      "query": "path:planning/ ",
+      "color": {
+        "a": 1,
+        "rgb": 14262120
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.539510896689403,
+  "repelStrength": 12.5231910946197,
+  "linkStrength": 1,
+  "linkDistance": 232,
+  "scale": 1.0000000000000018,
+  "close": true
+}

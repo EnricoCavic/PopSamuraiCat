@@ -1,0 +1,16 @@
+{
+  "$comment": "Vendored with the method. The UserPromptSubmit hook prints nothing until the session context reaches the ceiling this project set in wiki/SCHEMA.md, so it costs no tokens until it matters. KNOWN DEFECT: the command is Windows-only and will fail on every prompt on macOS or Linux until it is made portable.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/tools/context-report.ps1\" -Hook",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

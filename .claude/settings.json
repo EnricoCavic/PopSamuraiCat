@@ -1,0 +1,5 @@
+{
+  "enabledPlugins": {
+    "brain-os-deploy@brain-os": true
+  }
+}

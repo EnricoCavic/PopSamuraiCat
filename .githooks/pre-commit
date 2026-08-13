@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+# Pre-commit: credential pre-screen.
+#
+# Blocks high-confidence secret shapes BEFORE they enter object history — once
+# committed, the remedy is rotation, not deletion.
+#
+# INSTALL:  git config core.hooksPath .githooks
+# BYPASS:   git commit --no-verify   (do this only when you know the match is a
+#           false positive, and say so in the commit message)
+#
+# This file is vendored with the method but deliberately lives OUTSIDE the
+# vendored subtree, because `.githooks/` has to stay yours: pointing
+# core.hooksPath into vendored territory would mean you cannot add a hook of
+# your own without it registering as drift. The scanner it calls does live in
+# the subtree, hence the path below.
+#
+# This is the only pre-commit check in this repo. It deliberately does not
+# validate documentation, workflow state, or wiki structure. Secrets are the one
+# mistake good intent does not prevent and that cannot be undone after the fact;
+# everything else this method relies on is a habit, not a gate.
+
+set -u
+
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+if [[ -z "$ROOT" ]]; then
+  echo "pre-commit: unable to locate the git repository root." >&2
+  exit 1
+fi
+cd "$ROOT" || exit 1
+
+SCANNER=".claude/skills/brain-os/tools/scan_credentials.py"
+
+# Resolve a Python interpreter; the scanner is stdlib-only.
+PY=""
+command -v python  >/dev/null 2>&1 && PY=python
+[[ -z "$PY" ]] && command -v python3 >/dev/null 2>&1 && PY=python3
+
+if [[ -z "$PY" ]]; then
+  echo "pre-commit: WARNING — no Python found; credential scan SKIPPED." >&2
+  echo "   Secrets could reach history unchecked. Install Python or scan manually." >&2
+  exit 0
+fi
+
+if [[ ! -f "$SCANNER" ]]; then
+  echo "pre-commit: WARNING — $SCANNER missing; credential scan SKIPPED." >&2
+  exit 0
+fi
+
+"$PY" "$SCANNER" --staged
+rc=$?
+
+case "$rc" in
+  0) exit 0 ;;
+  1)
+    echo "" >&2
+    echo "pre-commit: credential pattern detected in staged changes — commit blocked." >&2
+    echo "   Rotate the exposed secret, remove it from the change, then re-commit." >&2
+    exit 1
+    ;;
+  *)
+    # Exit 3 (or anything unexpected) means the scan could not run. Warn loudly,
+    # but do not block — a broken scanner must not stop all work.
+    echo "pre-commit: WARNING — credential scan could not run (exit $rc); continuing." >&2
+    exit 0
+    ;;
+esac
